@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
+    <meta name="dcterms.created" content="lun, 07 mag 2018 08:37:41 GMT">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="css/bootstrap.offcanvas.min.css"/>
+
+
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0,user-scalable = no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <style>
+				.MultiCarousel { float: left; overflow: hidden; padding: 2px; width: 100%; position:relative; }
+    			   .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+        		   .MultiCarousel .MultiCarousel-inner .item { float: left;}
+        		   .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px;  color:#666;}
+    			   .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; top:0 }
+    			   .MultiCarousel .leftLst { left:0;}
+    			   .MultiCarousel .rightLst { right:0; }
+
+        		   .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none;  }
+
+				   .grad-left{
+				   		 position: absolute;
+						 top: 0;
+						 left: 0;
+						 width: 30px;
+						 height: 100%;
+						 background: grey;
+						 background: linear-gradient(to left, rgba(255,0,0,0), rgba(239,238,226,1));
+				   }
+				   .grad-right{
+				   		 position: absolute;
+						 top: 0;
+						 right: 0;
+						 width: 30px;
+						 height: 100%;
+						 background: grey;
+						 background: linear-gradient(to right, rgba(255,0,0,0), rgba(239,238,226,1));
+				   }
+
+				   .table-hover > tbody > tr:hover > td,
+				   .table-hover > tbody > tr:hover > th {
+				   		 background-color: #fff;
+				   }
+
+				   .riga{
+						height: 100px;
+						display: inline;
+						overflow-x: scroll;
+				   }
+				   .thumbnail{
+						width: 100px;
+						float:left;
+				  }
+
+				  .row{
+						background-color: grey;
+						height: 130px;
+						overflow: scroll;
+					}
+
+					.interno{
+						margin: 0;
+						height: 115px;
+						background-color: green;
+						position: relative;
+					}
+
+					.itemul{
+						margin-left: 10px;
+						float: left;
+						width: 100px;
+						height: 110px;
+						background-color: white;
+						padding-left: 10px;
+			</style>
+
+
+
+</head>
+<body style="background-color:#f1f1f1">
+
+<header class="clearfix">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">ZeceSapte</a>
+                <button type="button" class="navbar-toggle offcanvas-toggle pull-right" data-toggle="offcanvas" data-target="#js-bootstrap-offcanvas" style="float:left;">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span>
+                          			  		<span class="icon-bar"></span>
+                          					<span class="icon-bar"></span>
+                          					<span class="icon-bar"></span>
+                        			  </span>
+                </button>
+            </div>
+            <div class="navbar-offcanvas navbar-offcanvas-touch" id="js-bootstrap-offcanvas">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Categorie Scelte <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#">Link</a></li>
+                    <!--<li><a href="#">Another Link</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container"> <!--style="background-color:#777"-->
+
+
+    <!--Carousel-->
+    <!--
+          CSS per Carousel
+         .MultiCarousel { float: left; overflow: hidden; padding: 2px; width: 100%; position:relative; }
+         .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+         .MultiCarousel .MultiCarousel-inner .item { float: left;}
+         .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px;  color:#666;}
+         .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; top:0 }
+         .MultiCarousel .leftLst { left:0;}
+         .MultiCarousel .rightLst { right:0; }
+
+         .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none;  }
+    -->
+
+
+    <div id = "carusel" class = "row">
+        <div id = "parent" class = "interno">
+
+            <div class = "itemul">
+                <span>boom</span>
+            </div>
+            <div class = "itemul">
+                <span>ciao</span>
+            </div>
+            <div class = "itemul">
+                <span>nada</span>
+            </div>
+            <div class = "itemul">
+                <span>banana</span>
+            </div>
+            <div class = "itemul">
+                <span>cetriolo</span>
+            </div>
+            <div class = "itemul">
+                <span>boom</span>
+            </div>
+            <div class = "itemul">
+                <span>ciao</span>
+            </div>
+            <div class = "itemul">
+                <span>nada</span>
+            </div>
+            <div class = "itemul">
+                <span>banana</span>
+            </div>
+            <div class = "itemul">
+                <span>cetriolo</span>
+            </div>
+
+        </div>
+    </div>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+						$( myFunction() {
+
+							var lunghezza = document.getElementById("parent").childElementCount;
+							var lung = lunghezza * 120 + 10;
+							document.getElementById("parent").style.width =  lung + "px";
+						})
+				</script>
+
+    <div id = "riga_carousel" class = "riga" >
+
+        <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+                <h3>Thumbnail</h3>
+                <p>...</p>
+
+            </div>
+        </div>
+
+        <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+                <h3>Thumbnail</h3>
+                <p>...</p>
+
+            </div>
+        </div>
+
+        <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+                <h3>Thumbnail</h3>
+                <p>...</p>
+
+            </div>
+        </div>
+
+        <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+                <h3>Thumbnail</h3>
+                <p>...</p>
+
+            </div>
+        </div>
+
+        <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+                <h3>Thumbnail</h3>
+                <p>...</p>
+
+            </div>
+        </div>
+
+        <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+                <h3>Thumbnail</h3>
+                <p>...</p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row" style="padding:7px">
+        <div class="MultiCarousel slide" data-items="2,2,2,2" data-slide="1" id="MultiCarousel"  data-interval="1000">
+
+            <div class="MultiCarousel-inner">
+                <div  class="item active">
+                    <div style="background-color:#FFF; margin: 2px; border-radius:7px" class="pad15" >
+                        <img src="img/slide_terzo.png" alt="...">
+                        <div class="lead">
+                            <h5>Primo passaggio</h5>
+                            <p>i materiali</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="item"><base />
+                    <div style="background-color:#FFF; margin: 2px; border-radius:7px" class="pad15">
+                        <img src="img/slide_secondo.png" alt="...">
+                        <div class="lead">
+                            <h5>Secondo passaggio</h5>
+                            <p>i materiali</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="item">
+                    <div style="background-color:#FFF; margin: 2px; border-radius:7px" class="pad15">
+                        <img src="img/slide_terzo.png" alt="...">
+                        <div class="lead">
+                            <h5>Terzo passaggio</h5>
+                            <p>i materiali</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--
+             <button class="btn btn-primary leftLst">
+                      <span class="icon-prev"></span>
+             </button>
+             <button class="btn btn-primary rightLst">
+                     <span class="icon-next"></span>
+             </button>
+            -->
+            <a class="left carousel-control leftLst" href="#MultiCarousel" data-slide="prev" style="border-radius:7px">
+                <span class="icon-prev"></span>
+            </a>
+
+            <a class="right carousel-control rightLst" href="#MultiCarousel" data-slide="next" style="border-radius:7px ">
+                <span class="icon-next"></span>
+            </a>
+
+        </div>
+    </div>
+    <script>
+    					$(document).ready(function() {
+       						$("#MultiCarousel").swiperight(function() {
+          						$(this).carousel('prev');
+        					});
+      						$("#MultiCarousel").swipeleft(function() {
+          							$(this).carousel('next');
+       						});
+       	  				});
+
+    			</script>
+    <!-- Carousel END-->
+
+    <div class="row" style="padding:7px">
+        <div class="MultiCarousel slide" data-items="2,2,2,2" data-slide="1" id="MultiCarousel-2"  data-interval="1000">
+
+            <div class="MultiCarousel-inner">
+                <div class="item active">
+                    <div style="background-color:#FFF; margin: 2px; border-radius:7px" class="pad15">
+                        <img src="img/slide_terzo.png" alt="...">
+                        <div class="lead">
+                            <h5>Primo passaggio</h5>
+                            <p>i materiali</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="item"><base />
+                    <div style="background-color:#FFF; margin: 2px; border-radius:7px" class="pad15">
+                        <img src="img/slide_secondo.png" alt="...">
+                        <div class="lead">
+                            <h5>Secondo passaggio</h5>
+                            <p>i materiali</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="item">
+                    <div  style="background-color:#FFF; margin: 2px; border-radius:7px" class="pad15">
+                        <img src="img/slide_terzo.png" alt="...">
+                        <div class="lead">
+                            <h5>Terzo passaggio</h5>
+                            <p>i materiali</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <a class="left carousel-control leftLst" href="#MultiCarousel" data-slide="prev" style="border-radius:7px">
+                <span class="icon-prev"></span>
+            </a>
+
+            <a class="right carousel-control rightLst" href="#MultiCarousel" data-slide="next" style="border-radius:7px">
+                <span class="icon-next"></span>
+            </a>
+
+        </div>
+    </div>
+    <script>
+					window.alert($("html").height());
+					window.alert($("html").width());
+						/*
+						 * Script JavaScript per Carousel
+						 */
+    					$(document).ready(function() {
+       						$("#MultiCarousel-2").swiperight(function() {
+          						$(this).carousel('prev');
+        					});
+      						$("#MultiCarousel-2").swipeleft(function() {
+          							$(this).carousel('next');
+       						});
+       	  				});
+
+
+
+    					$(document).ready(function () {
+                        var itemsMainDiv = ('.MultiCarousel');
+                        var itemsDiv = ('.MultiCarousel-inner');
+                        var itemWidth = "";
+
+                        $('.leftLst, .rightLst').click(function () {
+
+                            var condition = $(this).hasClass("leftLst");
+                            if (condition)
+                                click(0, this);
+                            else
+                                click(1, this)
+                        });
+
+                        ResCarouselSize();
+
+
+
+
+                        $(window).resize(function () {
+                            ResCarouselSize();
+                        });
+
+                        //this function define the size of the items
+                        function ResCarouselSize() {
+                            var incno = 0;
+                            var dataItems = ("data-items");
+                            var itemClass = ('.item');
+                            var id = 0;
+                            var btnParentSb = '';
+                            var itemsSplit = '';
+                            var sampwidth = $(itemsMainDiv).width();
+                            var bodyWidth = $('body').width();
+                            $(itemsDiv).each(function () {
+                                id = id + 1;
+                                var itemNumbers = $(this).find(itemClass).length;
+                                btnParentSb = $(this).parent().attr(dataItems);
+                                itemsSplit = btnParentSb.split(',');
+                                $(this).parent().attr("id", "MultiCarousel" + id);
+
+
+                                if (bodyWidth >= 1200) {
+                                    incno = itemsSplit[3];
+                                    itemWidth = sampwidth / incno;
+                                }
+                                else if (bodyWidth >= 992) {
+                                    incno = itemsSplit[2];
+                                    itemWidth = sampwidth / incno;
+                                }
+                                else if (bodyWidth >= 768) {
+                                    incno = itemsSplit[1];
+                                    itemWidth = sampwidth / incno;
+                                }
+                                else {
+                                    incno = itemsSplit[0];
+                                    itemWidth = sampwidth / incno;
+                                }
+                                $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
+                                $(this).find(itemClass).each(function () {
+                                    $(this).outerWidth(itemWidth);
+                                });
+
+                                $(".leftLst").addClass("over");
+                                $(".rightLst").removeClass("over");
+
+                            });
+                        }
+
+
+                        //this function used to move the items
+                        function ResCarousel(e, el, s) {
+                            var leftBtn = ('.leftLst');
+                            var rightBtn = ('.rightLst');
+                            var translateXval = '';
+                            var divStyle = $(el + ' ' + itemsDiv).css('transform');
+                            var values = divStyle.match(/-?[\d\.]+/g);
+                            var xds = Math.abs(values[4]);
+                            if (e == 0) {
+                                translateXval = parseInt(xds) - parseInt(itemWidth * s);
+                                $(el + ' ' + rightBtn).removeClass("over");
+
+                                if (translateXval <= itemWidth / 2) {
+                                    translateXval = 0;
+                                    $(el + ' ' + leftBtn).addClass("over");
+                                }
+                            }
+                            else if (e == 1) {
+                                var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
+                                translateXval = parseInt(xds) + parseInt(itemWidth * s);
+                                $(el + ' ' + leftBtn).removeClass("over");
+
+                                if (translateXval >= itemsCondition - itemWidth / 2) {
+                                    translateXval = itemsCondition;
+                                    $(el + ' ' + rightBtn).addClass("over");
+                                }
+                            }
+                            $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
+                        }
+
+                        //It is used to get some elements from btn
+                        function click(ell, ee) {
+                            var Parent = "#" + $(ee).parent().attr("id");
+                            var slide = $(Parent).attr("data-slide");
+                            ResCarousel(ell, Parent, slide);
+                        }
+
+                    });
+    			</script>
+    <!-- Carousel END-->
+
+    <!--Tabella-->
+    <!--
+        CSS per tabella
+        .table-hover > tbody > tr:hover > td,
+       .table-hover > tbody > tr:hover > th {
+                background-color: #fff;
+       }
+
+
+    -->
+    <div class="row" style="padding:7px">
+        <table class="table table-condensed table-hover table-responsive">
+            <thead>
+            <tr data-toggle="modal" data-target="#myModal" >
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Username</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-toggle="modal" data-target="#myModal" >
+                <td>1</td>
+                <td>Marco</td>
+                <td>Rossi</td>
+                <td>marcoR</td>
+            </tr>
+            <tr data-toggle="modal" data-target="#myModal" >
+                <td>2</td>
+                <td>Paolo</td>
+                <td>Bianchi</td>
+                <td>paoloB</td>
+            </tr>
+            <tr data-toggle="modal" data-target="#myModal" >
+                <td>3</td>
+                <td>Sandro</td>
+                <td>Verdi</td>
+                <td>sandroV</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <!-- Modal -->
+        <!--
+            Da aggiungere nel tag del elemento scatenante
+            data-toggle="modal" data-target="#myModal"
+        -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Info Row</h4>
+                    </div>
+                    <div class="modal-body" >
+                        Overflowing text to show scroll behavior
+
+                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+
+                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+
+                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+
+                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+
+                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+
+                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fine tabella-->
+
+
+
+    <!-- Form di diversi input -->
+    <form>
+        <fieldset>
+
+            <div class="row">
+                <div class="col-sm-5 col-lg-5">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Inserisci il nome..."/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-5 col-lg-5">
+                    <div class="form-group">
+                        <label for="cognome">Cognome</label>
+                        <input type="text" class="form-control" id="cognome" placeholder="Inserisci il cognome..."/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-5 col-lg-5">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="Inserisci l'indirizzo email..."/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-5 col-lg-5">
+                    <div class="form-group">
+                        <label for="stato">Nazione</label>
+                        <select  class="form-control" id="stato">
+                            <option>Italia</option>
+                            <option>Francia</option>
+                            <option>Germania</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 col-lg-5">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"/> Ricorda i miei dati
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-default">Invia</button>
+        </fieldset>
+    </form>
+    <!-- Fine form input -->
+
+</div>
+
+<div class="container" onclick="GetSelectedText()" > <!--style="background-color:#777"-->
+    <h1>Titolo con tag h1</h1>
+    <div class="h1">Titolo con classe .h1</div>
+
+    <p class="text-left">Sono un paragrafo allineato a sinistra.</p>
+    <p class="text-center">Sono un paragrafo allineato al centro.</p>
+    <p class="text-right">Sono un paragrafo allineato a destra.</p>
+
+    <p>Il linguaggio <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+
+    <address>
+        <strong>FakeBoot, Inc.</strong><br>
+        Via dei Cavalieri, 600<br>
+        Roma, 00100, Italy<br>
+        Telefono/fax: 123 456-7890
+    </address>
+
+    <span> Al suo interno si raccomanda di usare un paragrafo (<code>p</code>) per racchiudere il testo.
+				Se si include la fonte della citazione, si usi per definirla nel markup il tag
+				<code>small</code>, che ha come esito a livello visuale un ridimensionamento
+				del testo pari all'85% della dimensione di base.</span>
+    <blockquote>
+        <p>Essere o non essere, questo è il problema.</p>
+        <small>William Shakespeare, Amleto</small>
+    </blockquote>
+
+    <h1>Highlight Text</h1>
+    <p>Use the mark element to <mark>highlight</mark> text.</p>
+
+    <ul class="list-unstyled">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>...</li>
+    </ul>
+
+    <dl>
+        <dt>Item 1</dt>
+        <dd>Questa è la <b>descrizione<u> <i></i>dell'item</b> di una</u> lista di definizione.</dd>
+        <dt>Item 2</dt>
+        <dd>Questa è la descrizione dell'item di una lista di definizione.</dd>
+        <dt>Item 2</dt>
+        <dd>Questa è la descrizione dell'item di una lista di definizione.</dd>
+    </dl>
+
+
+
+</div>
+
+
+<!-- <script type="text/javascript">
+    function GetSelectedText () {
+        if (window.getSelection) {  // all browsers, except IE before version 9
+            var range = window.getSelection ();
+            alert (range.toString ());
+        }
+        else {
+            if (document.selection.createRange) { // Internet Explorer
+                var range = document.selection.createRange ();
+                alert (range.text);
+
+            }
+        }
+    }
+</script> -->
+
+<div id="prova"></div>
+<div onmouseup = "alert(getCharPosition(this))" onmousedown="prepare(this)"> <u>Hello</u>, <i>W</i>orld</div>
+
+<script type="text/javascript">
+	var getCharPosition = (
+	function(){
+
+    	function getSel(){
+    		var sel = null;
+
+    		if(typeof document.selection != "undefined" && document.selection && document.selection.type == "Text"){
+    			sel = document.selection;
+    		} else if( window.getSelection && window.getSelection().rangeCount > 0  ){
+    			sel = window.getSelection();
+    		}
+    		return sel;
+    	}
+
+    	function createRangeFromSel(sel){
+    		var rng = null;
+
+    		if( sel.createRange ) {
+    			rng = sel.createRange();
+    		} else if(sel.getRangeAt) {
+    			rng = sel.getRangeAt(0);
+
+    			if(rng.toString() == "")
+    				rng = null;
+    			}
+    			return rng;
+    		}
+
+    		return function(el){
+    			var sel = getSel(), rng, r2, i=-1;
+    			if(sel){
+    				rng = createRangeFromSel(sel);
+    				if(rng){
+    					if(rng.parentElement) {
+    						if(rng.parentElement() == el){
+    							r2 = document.body.createTextRange();
+    							r2.moveToElementText(el);
+    							r2.collapse(true);
+    							r2.setEndPoint("EndToStart", rng);
+    							i = r2.text.length;
+    						}
+    					} else {
+    						if( rng.startContainer && rng.endContainer && rng.startContainer==rng.endContainer && rng.startContainer==rng.commonAncestorContainer && rng.commonAncestorContainer.parentNode==el ){
+
+    							 //make sure your DIV does not have any inner element,
+    							 //otherwise more code is required in order to filter
+    							 //text nodes and count chars
+
+    							i = rng.startOffset;
+    						}
+    					}
+    				}
+    			}
+    			return i;
+    		};
+
+	})();
+
+	function prepare(el){
+		if(el.normalize) {
+			el.normalize();
+			document.getElementById('prova').innerHTML = el.normalize();
+		}
+	}
+ </script>
+
+
+
+-------------------------------
+<div name= "change" contenteditable="true"  id="selecttext" >jyufytfiy</div>
+
+<button name="doit" id="doit">do it</button>
+
+<script>
+                    $("#doit").click(function() {
+                        var textarea = document.getElementById("selecttext");
+
+                        if (window.getSelection) {
+						   alert("sono dentro");
+                                // check whether some text is selected in the textarea
+                            if (textarea.selectionStart != textarea.selectionEnd) {
+                                var newText = textarea.text().substring (0, textarea.selectionStart) +
+                                    "<b>" + textarea.text().substring  (textarea.selectionStart, textarea.selectionEnd) + "</b>" +
+                                    textarea.text().substring (textarea.selectionEnd);
+
+                               alert(newText);
+
+                            }
+                        }
+                        else {  // Internet Explorer before version 9
+                                // create a range from the current selection
+                            var textRange = document.selection.createRange ();
+                                // check whether the selection is within the textarea
+                            var rangeParent = textRange.parentElement ();
+                            if (rangeParent === textarea) {
+                                textRange.text = "<b>" + textRange.text + "</b>";
+                            }
+                        }
+                    });
+            </script>
+
+
+<div>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.offcanvas.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+<!--
+    DESCRIEREA
+
+    ...un altra app per la manipolazione dei poveri cervelli. Non siamo consoliati per te, quello che pensa che dare il consenso alla app di usare la tua fotocamera, entrare nella tua galeria, accedere a facebook....
+
+    L'applicazione in questione andrà a salvare meno dati posibili, ciò non vuol dire che per poter aggiornarvi sulle nuovità non andremmo a salvare il tuo nome, data di nascita, posizione geografica, tipo di dispositivo, categorie di interesse, ultime ricerche... perchè tanto ci piace gonfiare i nostri dataBase che costano soldi...tanto l'app la vuoi pure gratis e magari senza pubblicità.
+
+    La ZeceSapte è un'app di interesse generale, che tu cerchi la news, forum, cose GRATIS, viaggi, incontri con diversi gruppi, o la tua/il tuo moglie/marito.
+
+    Quasi tutto quello che trovi su questa piattaforma è stato aggiunto di voi quindi se non trovi qualcosa lo puoi aggiungere affinche gli altri lo trovino .
+
+
+    Accettare di usare questa app riporta alcuni vantaggi ed anche doveri:
+
+    - Se una news è stata inserita sarà unica perchè non si potrà inserire un'altra collegata allo stesso evento ma soltato migliorare quella gia esistente
+    - Tutti gli utenti hanno la loro per dire valutare se un item sia valido o no.
+    - Qualunque utente puo aggiungere la sua categoria, il suo item o aiutare a migliorare il contenuto esistente con iformazioni fresche o più futuristici
+
+    - Se se un publicatore di nuovi contenuti devi rispettare le richieste che ti vengono presentate ogni qualvolta che vai a creare qualcosa di nuovo.
+    - Se sei l'amministrattore di qualcosa devi dare la tua disponibilità per tutta la durata della tua candidatura.
+
+    - Se vuoi qualcosa di bello e utile impegnati a non rovinarlo.
+
+
+    idee della app è semplice:
+        Visto tutta la marea di app sui diversi contenuti e tutti quei messaggi negativi, principalmente sul contenuto, abbiamo pensato di darti una app dove sei tu a decidere se creare, aggiungere o togliere qualcosa. Noi ci impegnamo soltanto a offrirti un server veloce, una'app che offre dei buttoni funzionanti,
+-->
+</html>
